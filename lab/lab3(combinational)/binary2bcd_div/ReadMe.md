@@ -1,9 +1,11 @@
-Using part
-```
-(Basys3) xc7a35tcpg236-1
-```
-HLS synthesis
-1. Initial try with clock period = 10ns
-![](https://hackmd.io/_uploads/HJDa0wX3n.png)
+# Binary to BCD (by division)
+Using Board Basys3
+## HLS synthesis result
+### Utilization Estimates
+![](https://hackmd.io/_uploads/r17hrcihn.png)
 
-2.
+### Timing
+![](https://hackmd.io/_uploads/rknGD5j33.png)
+
+## Verilog synthesis result
+![](image.png)
