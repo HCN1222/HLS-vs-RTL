@@ -2,10 +2,7 @@
 Using Board Basys3
 ## HLS synthesis result
 ### Utilization Estimates
-![](https://hackmd.io/_uploads/r17hrcihn.png)
-
+![Alt text](image.png)
 ### Timing
-![](https://hackmd.io/_uploads/rknGD5j33.png)
-
+![Alt text](image-1.png)
 ## Verilog synthesis result
-![](image.png)
