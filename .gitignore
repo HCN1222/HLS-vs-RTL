@@ -6,6 +6,7 @@ bin-release/
 
 # Other files and folders
 .settings/
+hls_ip
 
 # Executables
 *.swf
