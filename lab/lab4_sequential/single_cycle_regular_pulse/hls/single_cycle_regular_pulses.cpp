@@ -7,8 +7,8 @@
 
 typedef enum{zero, one} states_type;
 void single_cycle_regular_pulses(bool &periodic_pulses) {
-#pragma HLS INTERFACE mode=ap_none port=periodic_pulses
-#pragma HLS INTERFACE mode=ap_ctrl_none port=return
+#pragma HLS INTERFACE ap_none port=periodic_pulses
+#pragma HLS INTERFACE ap_ctrl_none port=return
 
 
 	static states_type state = zero;

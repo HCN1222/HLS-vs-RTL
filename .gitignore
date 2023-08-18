@@ -8,6 +8,8 @@ bin-release/
 .settings/
 .vscode
 hls_ip
+vivado
+vitis_hls
 
 # Executables
 *.swf
