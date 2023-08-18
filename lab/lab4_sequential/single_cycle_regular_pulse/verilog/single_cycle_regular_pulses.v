@@ -27,22 +27,21 @@ module single_cycle_regular_pulses(clk,
     input clk;
     input rst_n;
     output reg[4:0] cnt;
-    output reg periodic_pulses;
+    output periodic_pulses;
     
     reg [4:0] cnt_next;
     
     //combinational logic
+    assign periodic_pulses = ~|cnt;
     always@(*)
     begin
-        if (cnt == 5'd19)
+        if (periodic_pulses)
         begin
-            cnt_next        = 5'd0;
-            periodic_pulses = 1;
+            cnt_next = 19;
         end
         else
         begin
-            cnt_next        = cnt + 1;
-            periodic_pulses = 0;
+            cnt_next = cnt-1;
         end
     end
     
@@ -51,7 +50,7 @@ module single_cycle_regular_pulses(clk,
     begin
         if (!rst_n)
         begin
-            cnt <= 0;
+            cnt <= 19;
         end
         else
             cnt <= cnt_next;
