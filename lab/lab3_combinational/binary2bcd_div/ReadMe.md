@@ -12,6 +12,7 @@
 ### Timing
 ![Alt text](image-1.png)
 ## Verilog synthesis result
+### Design
 ![Alt text](image.png)
 ### Utilization
 ![Alt text](image-3.png)
