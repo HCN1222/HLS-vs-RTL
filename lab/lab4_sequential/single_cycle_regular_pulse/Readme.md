@@ -2,6 +2,7 @@
     Using Board Basys3
     clock period = 10ns
 ## Result comparison
+''' As we can see, the result of HLS and verilog are the same. '''
 |Timing||
 |--------|--------|
 |HLS|![Alt text](image-6.png)|
@@ -11,5 +12,6 @@
 |--|--|
 |HLS|![Alt text](image.png)|
 |verilog|![Alt text](image-2.png)|
-### Design
+
+### Design plot for verilog
 ![Alt text](image-5.png)
