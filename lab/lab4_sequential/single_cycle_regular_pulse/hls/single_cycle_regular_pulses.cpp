@@ -1,8 +1,5 @@
 #include "single_cycle_regular_pulses.h"
 
-
-
-
 #define PULSE_PERIOD 20
 
 typedef enum{zero, one} states_type;
@@ -10,10 +7,8 @@ void single_cycle_regular_pulses(bool &periodic_pulses) {
 #pragma HLS INTERFACE ap_none port=periodic_pulses
 #pragma HLS INTERFACE ap_ctrl_none port=return
 
-
 	static states_type state = zero;
 	static unsigned int counter = PULSE_PERIOD-1;
-
 
 	states_type  next_state;
 	unsigned int next_counter;
@@ -35,9 +30,6 @@ void single_cycle_regular_pulses(bool &periodic_pulses) {
 		next_counter           = PULSE_PERIOD-1;
 		next_state             = zero;
 		periodic_pulses_local = 1;
-
-
-
 		break;
 	default:
 		break;

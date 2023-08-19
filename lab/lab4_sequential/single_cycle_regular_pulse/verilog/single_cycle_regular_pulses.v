@@ -20,21 +20,18 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module single_cycle_regular_pulses(clk,
-                                   rst_n,
-                                   cnt,
-                                   periodic_pulses);
+module single_cycle_regular_pulses(clk, rst_n, cnt, periodic_pulses);
     input clk;
     input rst_n;
     output reg[4:0] cnt;
-    output periodic_pulses;
+    output reg periodic_pulses;
     
     reg [4:0] cnt_next;
     
     //combinational logic
-    assign periodic_pulses = ~|cnt;
     always@(*)
     begin
+        periodic_pulses = ~|cnt;
         if (periodic_pulses)
         begin
             cnt_next = 19;
