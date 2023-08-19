@@ -9,7 +9,7 @@ bin-release/
 .vscode
 hls_ip
 vivado
-vitis_hls
+vitis_hls.log
 
 # Executables
 *.swf
