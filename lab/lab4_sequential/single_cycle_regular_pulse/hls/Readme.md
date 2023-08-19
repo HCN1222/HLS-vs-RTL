@@ -17,3 +17,4 @@
 ### Utilization
 ![Alt text](image-2.png)
 ### Timing
+![Alt text](image-3.png)
