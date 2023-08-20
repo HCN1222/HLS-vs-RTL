@@ -6,7 +6,7 @@ void bcd_counter(bool pulse, ap_uint<8> &seven_segment_data, ap_uint<4> &seven_s
 #pragma HLS INTERFACE ap_none port=seven_segment_enable
 #pragma HLS INTERFACE ap_none port=seven_segment_data
 #pragma HLS INTERFACE ap_none port=pulse
-#pragma HLS INTERFACE ap_ctrl_none port=return
+#pragma HLS INTERFACE ap_ctrl_hs port=return
 
 
 	static ap_uint<4> counter_state = 0;

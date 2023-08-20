@@ -24,10 +24,9 @@ module single_cycle_regular_pulses_tb();
     
     reg clk;
     reg rst_n;
-    wire[4:0] cnt;
     wire periodic_pulses;
     
-    single_cycle_regular_pulses single_cycle_regular_pulses_0(.clk(clk), .rst_n(rst_n), .cnt(cnt), .periodic_pulses(periodic_pulses));
+    single_cycle_regular_pulses single_cycle_regular_pulses_0(.clk(clk), .rst_n(rst_n), .periodic_pulses(periodic_pulses));
     
     always #10 clk = ~clk;
     
