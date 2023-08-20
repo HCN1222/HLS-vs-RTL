@@ -1,6 +1,7 @@
 #include "single_cycle_regular_pulses-tb.h"
 #include <iostream>
 
+
 int main() {
 
 	int status = 0;
