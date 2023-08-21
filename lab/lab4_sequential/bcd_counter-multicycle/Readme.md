@@ -14,10 +14,10 @@
 
 |Waveform  |        |
 |--------|--------|
-|HLS     |![Alt text](image.png)|
-|verilog | |
+|HLS     ||
+|verilog | ![Alt text](image-2.png)|
 
 |Utilization|                        |
 |--         |--                      |
-|HLS        |  |
+|HLS        | ![Alt text](image-1.png)|
 |verilog    | |

@@ -10,7 +10,7 @@
 
 |Waveform||
 |--|--|
-|HLS||
+|HLS|![Alt text](image-7.png)|
 |verilog|![Alt text](image-8.png)|
 
 ## Result comparison
@@ -24,5 +24,5 @@
 
 |Utilization|                        |
 |--         |--                      |
-|HLS        |![Alt text](image.png)  |
+|HLS        |![Alt text](image.png)|
 |verilog    |![Alt text](image-2.png)|
