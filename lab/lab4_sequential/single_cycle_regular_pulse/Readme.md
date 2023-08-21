@@ -10,7 +10,7 @@
 
 |Waveform||
 |--|--|
-|HLS|![Alt text](image-7.png)|
+|HLS||
 |verilog|![Alt text](image-8.png)|
 
 ## Result comparison
