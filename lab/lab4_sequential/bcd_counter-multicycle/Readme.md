@@ -17,7 +17,12 @@
 |HLS(pipelined) |![Alt text](image-3.png)|
 |verilog | ![Alt text](image-2.png)|
 
+|Timing|        |
+|--------|--------|
+|HLS (pipelined)    |![Alt text](image-6.png)|
+|verilog |![Alt text](image-7.png)|
+
 |Utilization|                        |
 |--         |--                      |
-|HLS        | ![Alt text](image-1.png)|
+|HLS (pipelined)| ![Alt text](image-1.png)|
 |verilog    |![Alt text](image.png)|
