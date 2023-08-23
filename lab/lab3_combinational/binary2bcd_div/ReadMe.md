@@ -1,20 +1,32 @@
 # Binary to BCD (by division)
-    Using Board Basys3
-## Result comparison
-### Utilization
-|       | HLS   | verilog   |
-| ----- | ----- | --------- |
-| LUT   | 75    |   43      |
 
-## HLS synthesis result
-### Utilization
-![Alt text](image2.png)
-### Timing
-![Alt text](image-1.png)
-## Verilog synthesis result
-### Design
+Using Board Basys3 with 20ns clock period.
+
+## Design
+
+This design is to convert the binary number to BCD number by division.
+
+* The binary_in is the input binary number.
+* The bcd is the output BCD number.
+
+The vivado design is based on the following diagram:
+
+**Note that the modulus operation is implemented by subtraction, multiplication and division to keep the design combinational.**
+
 ![Alt text](image.png)
-### Utilization
-![Alt text](image-3.png)
-### Timing
-![Alt text](image-2.png)
+
+## Result comparison
+
+The comparison of the design implemented by HLS and the design implemented by verilog is shown below.The utilization report indicates that the design implemented by verilog is more concise and efficient than the design implemented by HLS.
+
+|Simulation result  |        |
+|--------|--------|
+|HLS     |![Alt text](image-4.png)|
+|verilog |![Alt text](image-1.png)...![Alt text](image-2.png)|
+
+The result shows that both design are correct.
+
+|Utilization||
+|--|--|
+|HLS|![Alt text](image-5.png)|
+|verilog|![Alt text](image-3.png)|
