@@ -20,12 +20,12 @@ The vivado design is based on the following diagram:
 
 The comparison of the design implemented by HLS and the design implemented by verilog is shown below.The utilization report indicates that the design implemented by verilog is more concise and efficient than the design implemented by HLS.
 
-|Simulation result  |        |
+|Waveform  |        |
 |--------|--------|
-|HLS     |![Alt text](image-4.png)|
-|verilog |![Alt text](image-1.png)...![Alt text](image-2.png)|
+|HLS     |![Alt text](image-2.png)|
+|verilog |![Alt text](image-1.png)|
 
-The result shows that both design are correct.
+The result shows that both design convert binary into BCD.
 
 |Utilization||
 |--|--|
