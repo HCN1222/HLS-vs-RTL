@@ -20,10 +20,11 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module parallel2serial(clk, rst_n, parallel_in,serial_start, serial_out, serial_end );
+module parallel2serial(clk, rst_n, in_begin, parallel_in,serial_start, serial_out, serial_end );
 
     input clk;
     input rst_n;
+    input in_begin;
     input [7:0] parallel_in;
     output reg serial_start;
     output reg serial_out;
@@ -32,9 +33,13 @@ module parallel2serial(clk, rst_n, parallel_in,serial_start, serial_out, serial_
     reg [2:0] cnt;
     reg [2:0] cnt_next;
 
+
     //combinational logic
     always @(*)
     begin
+        //reset
+        rst_n = rst_n | ~in_begin;
+        //multiplexer
         case(cnt)
             3'd0:
             begin
@@ -94,6 +99,7 @@ module parallel2serial(clk, rst_n, parallel_in,serial_start, serial_out, serial_
         endcase
         cnt_next = cnt + 1'b1;
     end
+
 
     //sequential logic
     always @(posedge clk or negedge rst_n)
