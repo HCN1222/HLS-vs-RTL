@@ -1,8 +1,6 @@
 # Parallel to Serial
 
-Using Board Basys3
-
-Clock period = 10ns
+** Using Board Basys3 with 10ns clock period
 
 ## Design
 
