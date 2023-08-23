@@ -1,4 +1,4 @@
-const int n = 1234101;
+const int n = 100;
 
 
 int divbyconstant(int a) {
