@@ -22,38 +22,36 @@
 
 module parallel2serial_tb();
     reg clk;
-    reg rst_n;
     reg in_begin;
     reg[7:0] parallel_in;
     wire serial_start;
     wire serial_out;
     wire serial_end;
-
+    
     parallel2serial parallel2serial_0 (
-        .clk(clk), 
-        .rst_n(rst_n), 
-        .in_begin(in_begin),
-        .parallel_in(parallel_in), 
-        .serial_start(serial_start), 
-        .serial_out(serial_out), 
-        .serial_end(serial_end)
+    .clk(clk),
+    .in_begin(in_begin),
+    .parallel_in(parallel_in),
+    .serial_start(serial_start),
+    .serial_out(serial_out),
+    .serial_end(serial_end)
     );
-
+    
     always #10 clk = ~clk;
-
+    
     initial begin
-        clk = 1;
-        rst_n = 1;
-        in_begin = 0;
-        parallel_in = 8'b11010011;
-        #90 rst_n = 0;
-        #10 rst_n = 1;
-        @(posedge clk) in_begin = 1;
-    end
+        clk                     = 1;
+        in_begin                = 0;
+        parallel_in             = 8'b11010011;
+        
+        #80 in_begin = 1;
+        #20 in_begin = 0;
 
+    end
+    
     always @(*)
     begin
         @(posedge clk) $display("serial_start = %b, serial_out = %b, serial_end = %b", serial_start, serial_out, serial_end);
     end
-
+    
 endmodule

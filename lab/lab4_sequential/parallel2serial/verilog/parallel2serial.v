@@ -20,25 +20,21 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module parallel2serial(clk, rst_n, in_begin, parallel_in,serial_start, serial_out, serial_end );
+module parallel2serial(clk, in_begin, parallel_in,serial_start, serial_out, serial_end );
 
     input clk;
-    input rst_n;
     input in_begin;
     input [7:0] parallel_in;
     output reg serial_start;
     output reg serial_out;
     output reg serial_end;
 
-    reg [2:0] cnt;
-    reg [2:0] cnt_next;
-
+    reg [3:0] cnt;
+    reg [3:0] cnt_next;
 
     //combinational logic
     always @(*)
     begin
-        //reset
-        rst_n = rst_n | ~in_begin;
         //multiplexer
         case(cnt)
             3'd0:
@@ -89,23 +85,27 @@ module parallel2serial(clk, rst_n, in_begin, parallel_in,serial_start, serial_ou
                 serial_out   = parallel_in[7];
                 serial_end   = 1'b1;
             end
-            //this should not happen
+            //idle state
             default:
             begin
-                serial_start = 1'b1;
-                serial_out   = 1'b1;
-                serial_end   = 1'b1;
+                serial_start = 1'b0;
+                serial_out   = 1'b0;
+                serial_end   = 1'b0;
             end
         endcase
-        cnt_next = cnt + 1'b1;
+        //counter
+        if(cnt == 4'd8)
+            cnt_next = cnt;
+        else
+            cnt_next = cnt + 1'b1;
     end
 
 
     //sequential logic
-    always @(posedge clk or negedge rst_n)
+    always @(posedge clk)
     begin
-        if (!rst_n)
-            cnt <= 3'd0;
+        if (in_begin)
+            cnt <= 4'd0;
         else
             cnt <= cnt_next;
     end
