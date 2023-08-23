@@ -1,22 +1,44 @@
-# One Digit BCD counter
+# Serial to Parallel
 
-    Using Board Basys3
-    clock period = 10ns
+Using Board Basys3 with 10ns clock period
 
 ## Design
 
+This design is to convert the serial data to parallel data.
+
+* The input datas are the clk, rst_n, serial_start, serial_in.
+  * The clk is the clock signal.
+  * The rst_n is a low active reset signal.
+  * The serial_start is the signal that indicates the start of the input.
+  * The serial_in is the input data.
+* The output datas are the parallel_out, and parallel_end.
+  * The parallel_out is the output data.
+  * The parallel_end is the signal that indicates the end of the output.
+
+The vivado design is based on the following diagram:
 ![Alt text](image-4.png)
 
 ## Result comparison
 
-'''The design implemented by HLS uses six times as much LUTs as the design implemented by verilog and about four times the usage of FFs to that of the verilog design.'''
+The comparison of the design implemented by HLS and the design implemented by verilog is shown below.All imformations point out that the design implemented by verilog is more concise and efficient than the design implemented by HLS.
 
 |Waveform  |        |
 |--------|--------|
 |HLS     |![Alt text](image.png)|
 |verilog |![Alt text](image-2.png)|
 
+From the waveform, we prove that both design act the same, converting serial data to parallel data.
+
 |Utilization|                        |
 |--         |--                      |
 |HLS        |![Alt text](image-1.png)|
 |verilog    |![Alt text](image-3.png)|
+
+It is obvious that the design implemented by HLS uses six times as much LUTs as the design implemented by verilog and about four times the usage of FFs to that of the verilog design.
+
+|Timing||
+|--|--|
+|HLS|![Alt text](image-6.png)|
+|verilog|![Alt text](image-5.png)|
+
+By timing report, we can find out that the design implemented by verilog has bigger slack than the design implemented by HLS, this might come from the reduncdant design implemented by HLS.
