@@ -39,4 +39,5 @@ The result shows that both design are correct. (The input testcase of HLS  consi
 |--|--|
 |HLS|![Alt text](image-2.png)|
 |verilog|![Alt text](image-3.png)|
+
 The result shows that the utilization of both design is exactly the same.
