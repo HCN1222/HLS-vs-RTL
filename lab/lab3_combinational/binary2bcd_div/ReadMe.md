@@ -1,6 +1,7 @@
 # Binary to BCD (by division)
 
 Using Board Basys3 with 20ns clock period.
+**When clock period is 10ns, the design will become sequential circuit due to the latency.**
 
 ## Design
 
