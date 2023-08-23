@@ -26,7 +26,7 @@ The vivado design is based on the double dabble algorithm. The algorithm is show
 
 ## Result comparison
 
-The comparison of the design implemented by HLS and the design implemented by verilog is shown below. In this design, the utilization is identical.
+The comparison of the design implemented by HLS and the design implemented by verilog is shown below. In this design, the utilization of the structure implemented by HLS and viado is identical.
 
 | Waveform  |        |
 |--------|--------|
