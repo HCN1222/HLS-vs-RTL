@@ -33,4 +33,4 @@ The result shows that both design convert binary into BCD.
 |HLS|![Alt text](image-5.png)|
 |verilog|![Alt text](image-3.png)|
 
-The main different between the two designs is that the design implemented by HLS uses 3 DSPs while the design implemented by verilog did not use any of DSP. Although the design implemented by HLS uses less LUTs, the DSPs are more expensive than LUTs.
+The primary distinction between the two designs lies in the usage of resources. The HLS-implemented design employs 3 DSPs, whereas the Verilog-implemented design avoids the use of any DSPs. Despite the HLS design's lower LUT consumption, it's important to note that DSPs are more resource-intensive than LUTs.

@@ -31,7 +31,7 @@ module integer_division_modulus_tb();
     );
 
     integer i;
-    reg expected_r;
+    reg [3:0] expected_r;
 
     initial
     begin
@@ -41,7 +41,7 @@ module integer_division_modulus_tb();
             a = i;
             #1
 
-            expected_r = a % 10;
+            expected_r = i % 10;
 
             if (r != expected_r)
             begin
