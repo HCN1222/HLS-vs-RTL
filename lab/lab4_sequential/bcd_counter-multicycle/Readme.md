@@ -14,11 +14,16 @@ The purpose of this design is to count from 0 to 9 using BCD code and then showc
   * **seven_segment_data**: This signal contains the data to be displayed on the seven-segment display.
   * **seven_segment_display**: This signal determines the specific seven-segment display to be utilized.
 
+The vivado design is based on the following diagram:
 ![Alt text](image-5.png)
+
+**Please take into account that the design should employ an enabler to initiate the counter, rather than utilizing the 'pulse' signal as the 'clock' signal. This approach is necessary to avoid potential glitches that could arise. Below is the representation of the flawed design:**
+
+![Alt text](image-8.png)
 
 ## Result comparison
 
-The design implemented by HLS uses twice as much LUTs as the design implemented by verilog and triple the usage of FFs to that of the verilog design.
+The provided comparison between the design implemented using HLS and the one implemented using Verilog highlights that the Verilog-based design is notably more succinct and resource-efficient in timing and utilization.
 
 |Waveform  |        |
 |--------|--------|
@@ -26,12 +31,20 @@ The design implemented by HLS uses twice as much LUTs as the design implemented 
 |HLS(pipelined) |![Alt text](image-3.png)|
 |verilog |![Alt text](image-7.png)|
 
-|Timing|        |
-|--------|--------|
-|HLS (pipelined)    |![Alt text](image-6.png)|
-|verilog |![Alt text](image-2.png)|
+After examining the waveforms of both the pipelined and non-pipelined HLS designs, it becomes apparent that the non-pipelined design needs two clock cycles for setup, leading to a fifty percent chance of missed input pulses. Conversely, the pipelined design accomplishes its setup within a sole clock cycle.
+
+To emphasize, all three waveforms collectively demonstrate that the module operates as intended, counting from 0 to 9 and subsequently resetting to 0.
 
 |Utilization|                        |
 |--         |--                      |
 |HLS (pipelined)| ![Alt text](image-1.png)|
 |verilog    |![Alt text](image.png)|
+
+As indicated in the provided utilization report, the HLS-designed implementation utilizes 13 LUTs and 13 FFs, while the Verilog-designed counterpart employs 7 LUTs and 4 FFs. This aligns more closely with the desired design. Notably, the presence of a BUFG (Buffered Clock Gate) in the Verilog design implies the requirement for buffering and synchronization. This is likely critical to ensure accurate clock distribution and manage signal propagation delays effectively.
+
+|Timing|        |
+|--------|--------|
+|HLS (pipelined)    |![Alt text](image-6.png)|
+|verilog |![Alt text](image-2.png)|
+
+Through the timing report, it becomes evident that the Verilog-implemented design possesses a larger slack compared to the design implemented using HLS. This variance in slack might arise from the potential redundancy within the HLS implementation.
