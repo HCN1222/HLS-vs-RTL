@@ -7,6 +7,7 @@ Using Board Basys3 with 10ns clock period
 The purpose of this design is to count from 0 to 9 using BCD code and then showcase the count on a seven-segment display.
 
 * Input Signals:
+  * **clk**: This signal is the clock input.
   * **rst_n**: This signal is a low-active reset trigger.
   * **pulse**: This signal serves as the enable input for the counter.
 * Output Signals:
@@ -23,12 +24,12 @@ The design implemented by HLS uses twice as much LUTs as the design implemented 
 |--------|--------|
 |HLS     |![Alt text](image-4.png)|
 |HLS(pipelined) |![Alt text](image-3.png)|
-|verilog | ![Alt text](image-2.png)|
+|verilog |![Alt text](image-7.png)|
 
 |Timing|        |
 |--------|--------|
 |HLS (pipelined)    |![Alt text](image-6.png)|
-|verilog |![Alt text](image-7.png)|
+|verilog |![Alt text](image-2.png)|
 
 |Utilization|                        |
 |--         |--                      |
