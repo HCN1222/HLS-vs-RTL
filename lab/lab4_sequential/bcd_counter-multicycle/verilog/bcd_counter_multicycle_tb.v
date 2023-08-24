@@ -27,7 +27,7 @@ module bcd_counter_multicycle_tb();
     wire [7:0] seven_segment_data;
     wire [3:0] seven_segment_enable;
 
-    bcd_counter_multicycle bcd_counter_multicycle_0(.rst_n(rst_n), .pulse(clk), .seven_segment_data(seven_segment_data), .seven_segment_enable(seven_segment_enable));
+    bcd_counter_multicycle bcd_counter_multicycle_0(.clk(clk), .rst_n(rst_n), .pulse(clk), .seven_segment_data(seven_segment_data), .seven_segment_enable(seven_segment_enable));
 
     always #10 clk = ~clk;
 
