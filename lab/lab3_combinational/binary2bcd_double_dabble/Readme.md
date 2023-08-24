@@ -17,10 +17,10 @@ The vivado design is based on the double dabble algorithm. The algorithm is show
 |----------|----------|
 |00000000 | xxxx xxxx|
 
-1. Set the BCD number to 0.
-2. Shift the BCD number left by 1 bit.
-3. If the BCD number is greater than 4, add 3 to the BCD number.
-4. Repeat step 2 to 3 until the binary number is 0.
+1. Initialize 'bcd_out' to 0.
+2. Left-shift the combined value of 'bcd_out' and 'binary_in' by 1 bit.
+3. If the least significant digit of 'bcd_out' is 5 or greater, add 3 to the BCD number.
+4. Repeat steps 2 to 3 until the binary number becomes 0.
 
 **In this design(8-bit BCD), we perform 7 times step 2 and step 3 and one more time step 2.**
 
