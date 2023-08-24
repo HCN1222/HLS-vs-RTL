@@ -1,1 +1,1 @@
-# seminar_in_SOC
+# Seminar_in_SOC
