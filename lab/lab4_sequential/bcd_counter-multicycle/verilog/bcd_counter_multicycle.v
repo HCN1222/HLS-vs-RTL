@@ -31,7 +31,6 @@ module bcd_counter_multicycle(clk,
     output reg [7:0] seven_segment_data;
     output reg [3:0] seven_segment_enable;
     
-    reg counter_enabler;
     reg [3:0] bcd_counter;
     reg [3:0] bcd_counter_next;
     
@@ -39,8 +38,6 @@ module bcd_counter_multicycle(clk,
     //combinational logic
     always@(*)
     begin
-        //counter enabler
-        counter_enabler = clk & pulse;
         //sevensegment enabler
         seven_segment_enable = 4'b1110;
         //bcd to sevensegment decoder
@@ -58,18 +55,23 @@ module bcd_counter_multicycle(clk,
             //This shold not happen
             default: seven_segment_data = 8'b11111111;
         endcase
-
+        
         //counter
-        if(bcd_counter == 4'd9)
-            bcd_counter_next = 4'd0;
+        if (pulse == 1'b1)
+        begin
+            if (bcd_counter == 4'd9)
+                bcd_counter_next = 4'd0;
+            else
+                bcd_counter_next = bcd_counter + 4'd1;
+        end
         else
-            bcd_counter_next = bcd_counter + 4'd1;
+            bcd_counter_next = bcd_counter;
     end
-
+    
     //sequential logic
-    always@(posedge counter_enabler or negedge rst_n)
+    always@(posedge clk or negedge rst_n)
     begin
-        if(!rst_n)
+        if (!rst_n)
             bcd_counter <= 4'd0;
         else
             bcd_counter <= bcd_counter_next;
