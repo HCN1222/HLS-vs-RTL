@@ -2,7 +2,7 @@
 
 Using Board Basys3 with 40ns clock period.
 
-**When clock period is less than 40ns, the design will become sequential circuit due to the latency.**
+**When the clock period is set to be below 40ns, the design will transition into a sequential circuit configuration due to the associated latency.**
 
 ## Design
 
