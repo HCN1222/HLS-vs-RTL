@@ -34,7 +34,14 @@
 `define swait 4'b1010
 
 /*
-The objective of this design is to create a vending machine that dispenses candy priced at twenty-five cents. This vending machine accommodates nickels, dimes, and quarters as acceptable coins. Upon the user inserting the appropriate amount of money, the machine dispenses the candy and returns any surplus change. Subsequently, once the user takes the candy, the machine transitions into a waiting state, ready for the next purchase.
+The objective of this design is to create a vending machine 
+that dispenses candy priced at twenty-five cents. 
+This vending machine accommodates nickels, dimes, and quarters
+as acceptable coins. Upon the user inserting the appropriate 
+amount of money, the machine dispenses the candy and returns
+any surplus change. Subsequently, once the user takes the
+candy, the machine transitions into a waiting state, ready
+for the next purchase.
 
 * Input Signals:
  * **clk**: This signal is the clock input.
