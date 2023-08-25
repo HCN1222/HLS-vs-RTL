@@ -1,6 +1,6 @@
 # Leading One Detector
 
-Using Board Basys3 with 10ns clock period.
+Employing the Basys 3 board with a clock period of 10ns.
 
 **When the clock period is set to be below 20ns, the design will transition into a sequential circuit configuration due to the associated latency.**
 

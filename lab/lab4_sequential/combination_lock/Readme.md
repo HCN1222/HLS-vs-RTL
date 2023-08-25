@@ -1,6 +1,6 @@
 # Combinational Lock
 
-Using Board Basys3 with 10ns clock period
+Employing the Basys 3 board with a clock period of 10ns.
 
 ## Design
 

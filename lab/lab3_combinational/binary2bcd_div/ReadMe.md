@@ -1,6 +1,7 @@
 # Binary to BCD (by division)
 
-Using Board Basys3 with 10ns clock period.
+
+Employing the Basys 3 board with a clock period of 10ns.
 
 **In Vitis HLS, if the clock period is configured to be less than 20ns, the design will transform into a sequential circuit configuration due to the latency introduced. However, it's worth noting that the design is capable of completing within a single clock cycle of 10ns, as confirmed through verification in Vivado.**
 
