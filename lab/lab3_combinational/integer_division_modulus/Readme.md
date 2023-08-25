@@ -1,8 +1,8 @@
 # Interger Division Modulus
 
-Using Board Basys3 with 40ns clock period.
+Using Board Basys3 with 10ns clock period.
 
-**When the clock period is set to be below 40ns, the design will transition into a sequential circuit configuration due to the associated latency.**
+**In Vitis HLS, if the clock period is configured to be less than 40ns, the design will transform into a sequential circuit configuration due to the latency introduced. However, it's worth noting that the design is capable of completing within a single clock cycle of 10ns, as confirmed through verification in Vivado.**
 
 ## Design
 
