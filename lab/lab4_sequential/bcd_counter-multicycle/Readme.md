@@ -40,7 +40,9 @@ To emphasize, all three waveforms collectively demonstrate that the module opera
 |HLS (pipelined)| ![Alt text](image-1.png)|
 |verilog    |![Alt text](image.png)|
 
-As indicated in the provided utilization report, the HLS-designed implementation utilizes 13 LUTs and 13 FFs, while the Verilog-designed counterpart employs 7 LUTs and 4 FFs. This aligns more closely with the desired design. Notably, the presence of a BUFG (Buffered Clock Gate) in the Verilog design implies the requirement for buffering and synchronization. This is likely critical to ensure accurate clock distribution and manage signal propagation delays effectively.
+As indicated by the provided utilization report, the HLS-designed implementation employs 13 LUTs and 13 FFs, whereas the Verilog-designed counterpart utilizes 7 LUTs and 4 FFs. The higher resource usage in the HLS design could be attributed to the application of the pipeline pragma, which instructs the design to be implemented as a pipelined structure. While this approach reduces cycle latency, it also consumes more resources, thus aligning more closely with the intended design goal.
+
+Importantly, the inclusion of a BUFG (Buffered Clock Gate) in the Verilog design signifies the necessity for buffering and synchronization. This is likely crucial to ensure accurate clock distribution and effective management of signal propagation delays.
 
 |Timing|        |
 |--------|--------|
