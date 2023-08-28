@@ -18,7 +18,7 @@ The provided diagram portrays the block diagram of the UART transmitter in real-
 
 ![Alt text](image-3.png)
 
-The following depiction illustrates the Finite State Machine (FSM) for the UART kernel design. The transmitter initially resides in the "idle" state until the `start` signal is received. Upon detecting the `start` signal, the transmitter transitions into the "transmit" state. In this state, the transmitter proceeds to transmit the start bit, followed by the input data, and finally the stop bit. Upon completing the transmission of the stop bit, the transmitter reverts to the "idle" state. Notably, a counter will be employed to sequentially record the current bit position as it counts from 0 to 10.
+The following depiction illustrates the Finite State Machine (FSM) for the UART kernel design. The transmitter initially resides in the "idle" state until the `start` signal is received. Upon detecting the `start` signal, the transmitter transitions into the "transmit" state. In this state, the transmitter proceeds to transmit the start bit, followed by the input data, and finally the stop bit. Upon completing the transmission of the stop bit, the transmitter reverts to the "idle" state. Notably, a counter will be employed to sequentially record the current bit position as it counts from 0 to 9.
 
 ![Alt text](image-4.png)
 
