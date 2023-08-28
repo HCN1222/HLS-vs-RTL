@@ -23,11 +23,11 @@ The following depiction illustrates the Finite State Machine (FSM) for the UART 
 ![Alt text](image-4.png)
 
 | Waveform design |      |          |          |    |    |    |    |    |    |    |            |         |      |
-|-----------------|:----:|---------:|----------|----|----|----|----|----|----|----|------------|---------|------|
-| start           | 0    | 1        | 0        | 0  | 0  | 0  | 0  | 0  | 0  | 0  | 0          | 0       | 0    |
-| tx              |   1  | 0(start) | D0       | D1 | D2 | D3 | D4 | D5 | D6 | D7 | P8(parity) | 1(stop) | 1    |
-| state           | idle |        - | transmit | -  | -  | -  | -  | -  | -  | -  | -          | -       | idle |
-| cnt             |   9  |        9 | 0        | 1  | 2  | 3  | 4  | 5  | 6  | 7  | 8          | 9       | 9    |
+|-----------------|:----:|:--------:|:--------:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:----------:|:-------:|:----:|
+| start           |   0  |     1    |     0    |  0 |  0 |  0 |  0 |  0 |  0 |  0 |      0     |    0    |   0  |
+| tx              |   1  | 0(start) |    D0    | D1 | D2 | D3 | D4 | D5 | D6 | D7 | P8(parity) | 1(stop) |   1  |
+| state           | idle |     -    | transmit |  - |  - |  - |  - |  - |  - |  - |      -     |    -    | idle |
+| cnt             |   9  |     9    |     0    |  1 |  2 |  3 |  4 |  5 |  6 |  7 |      8     |    9    |   9  |
 
 ## Result comparison
 
