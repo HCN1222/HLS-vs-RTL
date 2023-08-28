@@ -12,8 +12,7 @@ This design is to create an UART transmitter. An UART transmitter facilitates se
   **Please take note that the start bit is represented by a logic 0, whereas the stop bit is represented by a logic 1.**
   * `start`: This signal instructs the transmitter to initiate the data transmission process.
 * Output signals
-  * `tx`: This signal represents the serial output data, encompassing the start signal, the input parallel data, the parity bit, and the stop signal.
-  **Please take note that in this design and in the HLS design, the parity bit is not functioning, which means we set the parity bit to be 0 for all the time.**
+  * `tx`: This signal represents the serial output data, encompassing the start signal, the input parallel data, and the stop signal.
 
 The provided diagram portrays the block diagram of the UART transmitter in real-world application. To facilitate proper functionality, the integration of certain components is essential. Specifically, a debouncer is required to mitigate signal noise in the `start` input derived from the push-button. Furthermore, a pulse generator is necessary to create a single-cycle pulse. In addition, a baud rate generator becomes indispensable to generate a synchronized baud rate signal that aligns with the UART receiver's operation.
 
