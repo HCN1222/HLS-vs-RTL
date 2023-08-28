@@ -37,20 +37,20 @@ Upon thorough examination of both the utilization and timing reports, it becomes
 |Waveform||
 |--|--|
 |HLS|![Alt text](image.png)|
-|Verilog||
+|Verilog|![Alt text](image-5.png)|
 
 The waveform demonstrates that the UART transmitter effectively transmits the data, incorporating the start bit, parity bit, and stop bit into the provided data stream.
 
 |Utilization||
 |--|--|
 |HLS|![Alt text](image-2.png)|
-|Verilog||
+|Verilog|![Alt text](image-6.png)|
 
-When evaluating resource efficiency, the Verilog design clearly stands out with a significant advantage. It employs merely 12 LUTs and 5 FFs. In contrast, the HLS design utilizes 52 LUTs and 33 FFs, representing a substantial increase of around 4 times in LUT usage and 6 times in FF usage.
+When evaluating resource efficiency, the Verilog design clearly stands out with a significant advantage. It employs merely 9 LUTs and 5 FFs. In contrast, the HLS design utilizes 52 LUTs and 33 FFs, representing a substantial increase of around 4 times in LUT usage and 6 times in FF usage.
 
 |Timing||
 |--|--|
 |HLS|![Alt text](image-1.png)|
-|Verilog||
+|Verilog|![Alt text](image-7.png)|
 
-Regarding timing performance, the Verilog design gains a landslide victory. It exhibits a substantial setup slack of 8.335ns, which is approximately twice the setup slack of the HLS design (4.141ns). The hold time slack shows no significant difference between the two designs.
+Regarding timing performance, the Verilog design gains a landslide victory. It exhibits a substantial setup slack of 8.329ns, which is approximately twice the setup slack of the HLS design (4.141ns). The hold time slack shows no significant difference between the two designs.
