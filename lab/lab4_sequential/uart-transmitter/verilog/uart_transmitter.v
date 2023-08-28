@@ -73,13 +73,7 @@ module uart_transmitter(clk, rst_n, baud_rate_signal, data_in, start, tx);
                     next_state = `TRANSMIT;
                     next_cnt = cnt + 1;
                 end
-                else if(cnt == 4'd9)//parity bit
-                begin
-                    tx = 0;
-                    next_state = `TRANSMIT;
-                    next_cnt = cnt + 1;
-                end
-                else if(cnt == 4'd10)//stop bit
+                else if(cnt == 4'd9)//stop bit
                 begin
                     tx = 1;
                     next_state = `IDLE;
