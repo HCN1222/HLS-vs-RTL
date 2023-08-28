@@ -6,14 +6,14 @@ Employing the Basys 3 board with a clock period of 10ns.
 
 This design is to convert the parallel data to serial data.
 
-* The input datas are the clk, in_begin, and the parallel_in.
-  * The clk is the clock signal.
-  * The in_begin  is the signal that indicates the start of the input, which acts as the reset signal.
-  * The parallel_in is the input data.
-* The output datas are the serial_out, serial_start, and  serial serial_end.
-  * The serial_out is the output data.
-  * The serial_start is the signal that indicates the start of the output.
-  * The serial_end is the signal that indicates the end of the output.
+* Input Signals:
+  * `clk`: This signal is the clock signal.
+  * `in_begin`: This signal indicates the start of the input, acting as the reset signal.
+  * `parallel_in`: This signal is the input data.
+* Output Signals:
+  * `serial_out`: This signal is the output data.
+  * `serial_start`: This signal indicates the start of the output.
+  * `serial_end`: This signal indicates the end of the output.
 
 The vivado design is based on the following diagram:
 

@@ -7,6 +7,12 @@ Employing the Basys 3 board with a clock period of 10ns.
 The objective of this design is to implement a 2-nd order IIR filter. The filter is defined by the following difference equation:
 
     y = 6x + (x-1) + 2(x-2) - 4(y-1) - 3(y-2)
+
+* Input Signal:
+  * `x`: This signal is the input value.
+* Output Signal:
+  * `y`: This signal is the output value.
+
 The structure of the filter is shown below:
 ![Alt text](image-6.png)
 

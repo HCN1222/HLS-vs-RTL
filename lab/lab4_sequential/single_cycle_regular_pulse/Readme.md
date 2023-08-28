@@ -6,10 +6,11 @@ Employing the Basys 3 board with a clock period of 10ns.
 
 This design is to generate a regular pulse every 20 clock cycles.
 
-* The input datas are the clk, rst_n.
-  * The clk is the clock signal.
-  * The rst_n is a low active reset signal.
-* The output data is the periodic_pulses.
+* Input Signals:
+  * `clk`: This signal is the clock signal.
+  * `rst_n`: This signal is a low-active reset signal.
+* Output Signals:
+  * `periodic_pulses`: This signal is the output data.
 
 The vivado design is based on the following diagram:
 

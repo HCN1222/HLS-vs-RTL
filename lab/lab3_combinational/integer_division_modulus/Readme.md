@@ -10,9 +10,10 @@ The objective of this design is to decrease the latency of the modulus operation
 
     a % b = a - ( a / b ) * b
 
-* The input data a is the dividend.
-* The divisor in this design is 10.
-* The output data r is the remainder.
+* Input Signals:
+  * `a`: This signal is the dividend.
+* Output Signals:
+  * `r`: This signal represents the remainder of the division by 10 (a % 10).
 
 ## Result comparison
 

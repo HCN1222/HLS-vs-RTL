@@ -9,8 +9,10 @@ Employing the Basys 3 board with a clock period of 10ns.
 
 This design is to convert the binary number to BCD number by division.
 
-* The binary_in is the input binary number.
-* The bcd is the output BCD number.
+* Input signal:
+  * `binary_in`: This signal is the input binary number.
+* Output signal:
+  * `bcd`:This signal represents the Binary Coded Decimal (BCD) number derived from the input binary signal.
 
 The vivado design is based on the following diagram:
 

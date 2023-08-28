@@ -7,12 +7,12 @@ Employing the Basys 3 board with a clock period of 10ns.
 The purpose of this design is to count from 0 to 9 using BCD code and then showcase the count on a seven-segment display.
 
 * Input Signals:
-  * **clk**: This signal is the clock input.
-  * **rst_n**: This signal is a low-active reset trigger.
-  * **pulse**: This signal serves as the enable input for the counter.
+  * `clk`: This signal is the clock input.
+  * `rst_n`: This signal is a low-active reset trigger.
+  * `pulse`: This signal serves as the enable input for the counter.
 * Output Signals:
-  * **seven_segment_data**: This signal contains the data to be displayed on the seven-segment display.
-  * **seven_segment_display**: This signal determines the specific seven-segment display to be utilized.
+  * `seven_segment_data`: This signal contains the data to be displayed on the seven-segment display.
+  * `seven_segment_display`: This signal determines the specific seven-segment display to be utilized.
 
 The vivado design is based on the following diagram:
 ![Alt text](image-5.png)

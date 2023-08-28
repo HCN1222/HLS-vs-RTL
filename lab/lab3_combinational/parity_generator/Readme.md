@@ -6,8 +6,10 @@ Employing the Basys 3 board with a clock period of 10ns.
 
 This design is to generate the parity bit of the input binary number.
 
-* The data binary_in is the input binary number.
-* The data parity is the output parity bit.
+* Input signal:
+  * `binary_in`: This signal is the input binary number.
+* Output signal:
+  * `parity`: This signal represents the parity bit of the input binary number.
 
 The vivado design is based on the diagram shown below:
 
