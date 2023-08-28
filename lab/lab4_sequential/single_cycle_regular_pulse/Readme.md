@@ -18,6 +18,8 @@ The vivado design is based on the following diagram:
 
 ## Result comparison
 
+The outcomes indicate that both designs accomplish the same task. Nonetheless, the HLS design consumes significantly more resources compared to the Verilog design. Concurrently, the Verilog design exhibits superior timing performance.
+
 |Waveform||
 |--|--|
 |HLS|![Alt text](image-7.png)|
