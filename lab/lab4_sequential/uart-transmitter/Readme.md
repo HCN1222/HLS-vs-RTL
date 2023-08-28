@@ -12,7 +12,8 @@ This design is to create an UART transmitter. An UART transmitter facilitates se
   **Please take note that the start bit is represented by a logic 0, whereas the stop bit is represented by a logic 1.**
   * `start`: This signal instructs the transmitter to initiate the data transmission process.
 * Output signals
-  * `tx`: This signal represents the serial output data, encompassing the start signal, the input parallel data, and the stop signal.
+  * `tx`: This signal represents the serial output data, encompassing the start signal, the input parallel data, the parity bit, and the stop signal.
+  **Please take note that in this design and in the HLS design, the parity bit is not functioning, which means we set the parity bit to be 0 for all the time.**
 
 The provided diagram portrays the block diagram of the UART transmitter in real-world application. To facilitate proper functionality, the integration of certain components is essential. Specifically, a debouncer is required to mitigate signal noise in the `start` input derived from the push-button. Furthermore, a pulse generator is necessary to create a single-cycle pulse. In addition, a baud rate generator becomes indispensable to generate a synchronized baud rate signal that aligns with the UART receiver's operation.
 
@@ -22,26 +23,34 @@ The following depiction illustrates the Finite State Machine (FSM) for the UART 
 
 ![Alt text](image-4.png)
 
-| Waveform design |      |          |          |    |    |    |    |    |    |    |            |         |      |
-|-----------------|:----:|:--------:|:--------:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:----------:|:-------:|:----:|
-| start           |   0  |     1    |     0    |  0 |  0 |  0 |  0 |  0 |  0 |  0 |      0     |    0    |   0  |
-| tx              |   1  | 0(start) |    D0    | D1 | D2 | D3 | D4 | D5 | D6 | D7 | P8(parity) | 1(stop) |   1  |
-| state           | idle |     -    | transmit |  - |  - |  - |  - |  - |  - |  - |      -     |    -    | idle |
-| cnt             |   X  |     X    |     0    |  1 |  2 |  3 |  4 |  5 |  6 |  7 |      8     |    9    |   X  |
+| Waveform design |      |          |    |    |    |    |    |    |    |    |            |          |      |
+|-----------------|:----:|:--------:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:----------:|:--------:|:----:|
+| start           |   0  |     1    |  0 |  0 |  0 |  0 |  0 |  0 |  0 |  0 |      0     |     0    |   0  |
+| tx              |   1  | 0(start) | D0 | D1 | D2 | D3 | D4 | D5 | D6 | D7 | P8(parity) |  1(stop) |   1  |
+| state           | idle | transmit |  - |  - |  - |  - |  - |  - |  - |  - |      -     | transmit | idle |
+| cnt             |   X  |     0    |  1 |  2 |  3 |  4 |  5 |  6 |  7 |  8 |      9     |    10    |   X  |
 
 ## Result comparison
+
+Upon thorough examination of both the utilization and timing reports, it becomes evident that the Verilog design surpasses the HLS design in terms of efficiency.
 
 |Waveform||
 |--|--|
 |HLS|![Alt text](image.png)|
-|Verilog||
+|Verilog|![Alt text](image-5.png)|
+
+The waveform demonstrates that the UART transmitter effectively transmits the data, incorporating the start bit, parity bit, and stop bit into the provided data stream.
 
 |Utilization||
 |--|--|
 |HLS|![Alt text](image-2.png)|
-|Verilog||
+|Verilog|![Alt text](image-6.png)|
+
+When evaluating resource efficiency, the Verilog design clearly stands out with a significant advantage. It employs merely 12 LUTs and 5 FFs. In contrast, the HLS design utilizes 52 LUTs and 33 FFs, representing a substantial increase of around 4 times in LUT usage and 6 times in FF usage.
 
 |Timing||
 |--|--|
 |HLS|![Alt text](image-1.png)|
-|Verilog||
+|Verilog|![Alt text](image-7.png)|
+
+Regarding timing performance, the Verilog design gains a landslide victory. It exhibits a substantial setup slack of 8.335ns, which is approximately twice the setup slack of the HLS design (4.141ns). The hold time slack shows no significant difference between the two designs.
