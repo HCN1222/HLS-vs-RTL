@@ -10,7 +10,7 @@ ZYSOC
 
 ### Lab 3
 
-[binary2bcd_div](/lab/lab3_combinational/binary2bcd_div/ReadMe.md)
+[binary2bcd_div](/lab/lab3_combinational/binary2bcd_div)
 
 [binary2bcd_double_dabble](/lab/lab3_combinational/binary2bcd_double_dabble/ReadMe.md)
 
