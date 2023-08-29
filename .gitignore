@@ -5,11 +5,21 @@ bin-release/
 [Bb]in/
 
 # Other files and folders
+
 .settings/
 .vscode
+# Application files
 hls_ip
 vivado
 vitis_hls.log
+#Oracle linux system
+virtual machine
+#Account and password
+FPGA帳密.txt
+GIT.pdf
+nthu-sp-interview.pdf
+soclab-summer-plan.pdf
+
 
 # Executables
 *.swf
@@ -20,9 +30,3 @@ vitis_hls.log
 # Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
 # should NOT be excluded as they contain compiler settings and other important
 # information for Eclipse / Flash Builder.
-
-#Oracle linux system
-virtual machine
-
-#Account and password
-FPGA帳密.txt
