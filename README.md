@@ -69,8 +69,7 @@ The lab is to focus on implementing sequential logic in Verilog by utilizing the
 
 5. [bcd_counter](/lab/lab4_sequential/bcd_counter/Readme.md)
 
-6. [single_cycle_regular_pulse](/lab/lab4_sequential/
-single_cycle_regular_pulse/Readme.md)
+6. [single_cycle_regular_pulse](/lab/lab4_sequential/single_cycle_regular_pulse/Readme.md)
 
 7. [iir](/lab/lab4_sequential/iir/Readme.md)
 
