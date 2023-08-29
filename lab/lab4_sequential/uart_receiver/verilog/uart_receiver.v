@@ -46,6 +46,9 @@ module uart_receiver(clk,
     output reg [7:0] data;
     output reg valid;
     
+    reg [7:0] next_data;
+    reg next_valid;
+    
     reg state;
     reg next_state;
     
@@ -61,48 +64,49 @@ module uart_receiver(clk,
                 begin
                     if (rx == 1'b0)
                     begin
-                        valid      = 1'b0;
-                        data       = data;
+                        next_valid = 1'b0;
+                        next_data  = data;
                         next_state = `RECEIVE;
                         next_cnt   = 4'd0;
                     end
                     else
                     begin
-                        valid      = 1'b0;
-                        data       = data;
+                        next_valid = 1'b0;
+                        next_data  = data;
                         next_state = `IDLE;
                         next_cnt   = cnt + 1;
                     end
                 end
                 `RECEIVE:
                 begin
-                    if (cnt == 4'd8)
+                    if (cnt == 4'd9)
                     begin
-                        valid      = 1'b1;
-                        data       = data;
+                        next_valid = 1'b1;
+                        next_data  = data;
                         next_state = `IDLE;
                         next_cnt   = cnt + 1;
                     end
                     else
                     begin
-                        valid      = 1'b0;
-                        data[cnt]  = rx;
-                        next_state = `RECEIVE;
-                        next_cnt   = cnt + 1;
+                        next_valid     = 1'b0;
+                        next_data = data;
+                        next_data[cnt] = rx;
+                        next_state     = `RECEIVE;
+                        next_cnt       = cnt + 1;
                     end
                 end
                 default://should not happen
                 begin
-                    valid      = valid;
-                    data       = data;
+                    next_valid = valid;
+                    next_data  = data;
                     next_state = `IDLE;
                     next_cnt   = 4'd0;
                 end
             endcase
         else
         begin
-            valid      = valid;
-            data       = data;
+            next_valid = valid;
+            next_data  = data;
             next_state = state;
             next_cnt   = cnt;
         end
@@ -113,11 +117,15 @@ module uart_receiver(clk,
     begin
         if (!rst_n)
         begin
+            data  <= 8'b0;
+            valid <= 1'b0;
             state <= `IDLE;
             cnt   <= 4'b0000;
         end
         else
         begin
+            data  <= next_data;
+            valid <= next_valid;
             state <= next_state;
             cnt   <= next_cnt;
         end
