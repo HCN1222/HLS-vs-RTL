@@ -4,16 +4,22 @@
 <!-- vscode-markdown-toc -->
 * [Table of Contents](#TableofContents)
 * [Labs](#Labs)
-  * [PYNQ](#PYNQ)
-  * [KV260](#KV260)
-  * [Combinational design](#Combinationaldesign)
-    * [Descriptions](#Descriptions)
-    * [Lab Results](#LabResults)
-    * [Insights and Reflections](#InsightsandReflections)
-  * [Sequential design](#Sequentialdesign)
-  * [Descriptions](#Descriptions-1)
-  * [Lab Results](#LabResults-1)
-  * [Insights and Reflections](#InsightsandReflections-1)
+	* [PYNQ](#PYNQ)
+		* [Descriptions](#Descriptions)
+		* [Lab Results](#LabResults)
+		* [Insights and Reflections](#InsightsandReflections)
+	* [KV260](#KV260)
+		* [Descriptions](#Descriptions-1)
+		* [Lab Results](#LabResults-1)
+		* [Insights and Reflections](#InsightsandReflections-1)
+	* [HLS vs. Verilog ( Combinational )](#HLSvs.VerilogCombinational)
+		* [Descriptions](#Descriptions-1)
+		* [Lab Results](#LabResults-1)
+		* [Insights and Reflections](#InsightsandReflections-1)
+	* [HLS vs. Verilog ( Sequential )](#HLSvs.VerilogSequential)
+		* [Descriptions](#Descriptions-1)
+		* [Lab Results](#LabResults-1)
+		* [Insights and Reflections](#InsightsandReflections-1)
 
 <!-- vscode-markdown-toc-config
 	numbering=false
@@ -23,21 +29,37 @@
 
 ## <a name='Labs'></a>Labs
 
+* Environment: Ubuntu 20.04+ on Oracle VM VirtualBox
+* Applications: Xilinx Vitis 2022.1 (Vitis_hls / Vivado)
+* FPGA boards: Xilinx PYNQ-Z2 / ZYSOC KV260 / BASYS3
+
 ### <a name='PYNQ'></a>PYNQ
-
-* PYNQ
-
-### <a name='KV260'></a>KV260
-
-* ZYSOC
-
-### <a name='Combinationaldesign'></a>Combinational design
 
 #### <a name='Descriptions'></a>Descriptions
 
-The lab revolves around implementing combinational logic in Verilog based on the provided HLS code. The primary aim is to compare the utilization reports of the resulting designs.
+* PYNQ
 
 #### <a name='LabResults'></a>Lab Results
+
+#### <a name='InsightsandReflections'></a>Insights and Reflections
+
+### <a name='KV260'></a>KV260
+
+#### <a name='Descriptions-1'></a>Descriptions
+
+* KV260
+
+#### <a name='LabResults-1'></a>Lab Results
+
+#### <a name='InsightsandReflections-1'></a>Insights and Reflections
+
+### <a name='HLSvs.VerilogCombinational'></a>HLS vs. Verilog ( Combinational )
+
+#### <a name='Descriptions-1'></a>Descriptions
+
+The lab revolves around implementing combinational logic in Verilog based on the provided HLS code. The primary aim is to compare the utilization reports of the resulting designs.
+
+#### <a name='LabResults-1'></a>Lab Results
 
 1. [parity_generator](/lab/lab3_combinational/parity_generator/Readme.md)
 
@@ -49,15 +71,15 @@ The lab revolves around implementing combinational logic in Verilog based on the
 
 5. [binary2bcd_double_dabble](/lab/lab3_combinational/binary2bcd_double_dabble/Readme.md)
 
-#### <a name='InsightsandReflections'></a>Insights and Reflections
+#### <a name='InsightsandReflections-1'></a>Insights and Reflections
 
-### <a name='Sequentialdesign'></a>Sequential design
+### <a name='HLSvs.VerilogSequential'></a>HLS vs. Verilog ( Sequential )
 
-### <a name='Descriptions-1'></a>Descriptions
+#### <a name='Descriptions-1'></a>Descriptions
 
 The lab is to focus on implementing sequential logic in Verilog by utilizing the provided HLS code. The primary goal is to subsequently compare the utilization and timing reports of the two resulting designs.
 
-### <a name='LabResults-1'></a>Lab Results
+#### <a name='LabResults-1'></a>Lab Results
 
 1. [serial2parallel](/lab/lab4_sequential/serial2parallel/Readme.md)
 
@@ -77,4 +99,4 @@ The lab is to focus on implementing sequential logic in Verilog by utilizing the
 
 9. [uart_transmitter](/lab/lab4_sequential/uart_transmitter/Readme.md)
 
-### <a name='InsightsandReflections-1'></a>Insights and Reflections
+#### <a name='InsightsandReflections-1'></a>Insights and Reflections
