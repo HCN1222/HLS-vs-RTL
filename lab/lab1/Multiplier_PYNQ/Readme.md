@@ -1,6 +1,6 @@
 # Multiplier
 
-Using PYNQ-Z2 (part xc7z020clg400-1)
+Employing the PYNQ-Z2 board (part xc7z020clg400-1) with a clock period of 10ns.
 
 ## Design
 
@@ -11,7 +11,7 @@ This design constitutes a 32-bit multiplier. The primary objective of this lab i
 
 ## Results
 
-The results of the design have been verified as accurate. The simulation results are as follows:
+The results of the design have been verified as accurate. The results are as follows:
 
 ### Screenshot of the Results from Jupyter Notebook
 ![Alt text](image-3.png)
@@ -21,3 +21,7 @@ The results of the design have been verified as accurate. The simulation results
 
 ### Timing
 ![Alt text](image-2.png)
+
+## Reference
+
+[course-lab_1](https://github.com/bol-edu/course-lab_1.git)
