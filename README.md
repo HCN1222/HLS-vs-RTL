@@ -1,68 +1,40 @@
 # Seminar_in_SOC
 
-## <a name='TableofContents'></a>Table of Contents
-<!-- vscode-markdown-toc -->
-* [Table of Contents](#TableofContents)
-* [Labs](#Labs)
-  * [PYNQ](#PYNQ)
-    * [Descriptions](#Descriptions)
-    * [Lab Results](#LabResults)
-    * [Insights and Reflections](#InsightsandReflections)
-  * [KV260](#KV260)
-    * [Descriptions](#Descriptions-1)
-    * [Lab Results](#LabResults-1)
-    * [Insights and Reflections](#InsightsandReflections-1)
-  * [HLS vs. Verilog ( Combinational )](#HLSvs.VerilogCombinational)
-    * [Descriptions](#Descriptions-1)
-    * [Lab Results](#LabResults-1)
-    * [Insights and Reflections](#InsightsandReflections-1)
-  * [HLS vs. Verilog ( Sequential )](#HLSvs.VerilogSequential)
-    * [Descriptions](#Descriptions-1)
-    * [Lab Results](#LabResults-1)
-    * [Insights and Reflections](#InsightsandReflections-1)
+## Labs
 
-<!-- vscode-markdown-toc-config
-	numbering=false
-	autoSave=true
-	/vscode-markdown-toc-config -->
-<!-- /vscode-markdown-toc -->
+- Environment: Ubuntu 20.04+ on Oracle VM VirtualBox 6.1.42
+- Applications: Xilinx Vitis 2022.1 (Vitis_hls / Vivado)
+- FPGA boards: Xilinx PYNQ-Z2 / ZYSOC KV260 / BASYS3
 
-## <a name='Labs'></a>Labs
+### Lab 01 PYNQ
 
-* Environment: Ubuntu 20.04+ on Oracle VM VirtualBox 6.1.42
-* Applications: Xilinx Vitis 2022.1 (Vitis_hls / Vivado)
-* FPGA boards: Xilinx PYNQ-Z2 / ZYSOC KV260 / BASYS3
+#### Descriptions
 
-### <a name='PYNQ'></a>PYNQ
+- The objective of the lab is to facilitate familiarity with remotely monitoring PYNQ results using the Jupyter Notebook.
 
-#### <a name='Descriptions'></a>Descriptions
+#### Results
 
-* The objective of the lab is to facilitate familiarity with remotely monitoring PYNQ results using the Jupyter Notebook.
+#### Insights and Reflections
 
-#### <a name='LabResults'></a>Lab Results
+- Locate the register location of the design in PYNQ within the **hw.h** file, rather than the **.hwh** file.
 
-#### <a name='InsightsandReflections'></a>Insights and Reflections
+### Lab 02 KV260
 
-* Locate the register location of the design in PYNQ within the **hw.h** file, rather than the **.hwh** file.
+#### Descriptions
 
-### <a name='KV260'></a>KV260
+- KV260
 
-#### <a name='Descriptions-1'></a>Descriptions
+#### Results
 
-* KV260
+#### Insights and Reflections
 
+### Lab 03 HLS vs. Verilog ( Combinational )
 
-#### <a name='LabResults-1'></a>Lab Results
-
-#### <a name='InsightsandReflections-1'></a>Insights and Reflections
-
-### <a name='HLSvs.VerilogCombinational'></a>HLS vs. Verilog ( Combinational )
-
-#### <a name='Descriptions-1'></a>Descriptions
+#### Descriptions
 
 The lab revolves around implementing combinational logic in Verilog based on the provided HLS code. The primary aim is to compare the utilization reports of the resulting designs.
 
-#### <a name='LabResults-1'></a>Lab Results
+#### Results
 
 1. [parity_generator](/lab/lab3_combinational/parity_generator/Readme.md)
 
@@ -74,19 +46,19 @@ The lab revolves around implementing combinational logic in Verilog based on the
 
 5. [binary2bcd_double_dabble](/lab/lab3_combinational/binary2bcd_double_dabble/Readme.md)
 
-#### <a name='InsightsandReflections-1'></a>Insights and Reflections
+#### Insights and Reflections
 
 * In a general assessment, the design implemented in Verilog is slightly more efficient than the one implemented by HLS. This could be attributed to the fact that the Verilog design is simpler in terms of combinational logic.
 
-* In vitis_HLS, sometimes the error message "top function not found in testbench" might rise from the over-length of the path of the project, which might be solved by shortening the path. Please take note that the name of the file will effects the path length a lot, since vitis_hls will automatically generate a folder with the same name as the file name and also the .tcl under the file.  
+* In vitis_HLS, sometimes the error message "top function not found in testbench" might rise from the over-length of the path of the project, which might be solved by shortening the path. Please take note that the name of the file will affect the path length a lot, since Vitis HLS will automatically generate a folder with the same name as the file name and also the .tcl under the file.
 
-### <a name='HLSvs.VerilogSequential'></a>HLS vs. Verilog ( Sequential )
+### Lab 04 HLS vs. Verilog ( Sequential )
 
-#### <a name='Descriptions-1'></a>Descriptions
+#### Descriptions
 
 The lab is to focus on implementing sequential logic in Verilog by utilizing the provided HLS code. The primary goal is to subsequently compare the utilization and timing reports of the two resulting designs.
 
-#### <a name='LabResults-1'></a>Lab Results
+#### Results
 
 1. [serial2parallel](/lab/lab4_sequential/serial2parallel/Readme.md)
 
@@ -106,7 +78,7 @@ The lab is to focus on implementing sequential logic in Verilog by utilizing the
 
 9. [uart_transmitter](/lab/lab4_sequential/uart_transmitter/Readme.md)
 
-#### <a name='InsightsandReflections-1'></a>Insights and Reflections
+#### Insights and Reflections
 
 * In a general evaluation, the Verilog implementation consumes fewer resources compared to the one implemented using HLS. The HLS-based implementation, in contrast, tends to be less resource-efficient, often utilizing resources that are 3 to 4 times greater than those of the Verilog design.
 
