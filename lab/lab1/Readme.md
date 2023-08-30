@@ -1,8 +1,12 @@
 # Multiplier
 
+Using PYNQ-Z2 (part xc7z020clg400-1)
+
+## Design
+
 This design constitutes a 32-bit multiplier. The primary objective of this lab is to acquaint participants with the HLS tool and its workflow. The design is initially created in C++ and subsequently synthesized into Verilog. Following that, the design is implemented in Vivado and synthesized into a bitstream. The validation of the design takes place on the PYNQ-Z2 board, accomplished from within the Jupyter notebook environment.
 
-## Block Design 
+### Block Design 
 ![Alt text](image.png)
 
 ## Results
