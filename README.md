@@ -2,31 +2,45 @@
 
 ## Labs
 
-- Environment: Ubuntu 20.04+ on Oracle VM VirtualBox 6.1.42
-- Applications: Xilinx Vitis 2022.1 (Vitis_hls / Vivado)
-- FPGA boards: Xilinx PYNQ-Z2 / ZYSOC KV260 / BASYS3
+* Environment: Ubuntu 20.04+ on Oracle VM VirtualBox 6.1.42
 
-### Lab 01 PYNQ
+* Applications: Xilinx Vitis 2022.1 (Vitis_hls / Vivado), GTKWave v3.3.103
+
+* FPGA boards: Xilinx PYNQ-Z2 / ZYSOC KV260 / BASYS3
+
+### Lab 01 PYNQ-Z2 & KV260
 
 #### Descriptions
 
-- The objective of the lab is to facilitate familiarity with remotely monitoring PYNQ results using the Jupyter Notebook.
+The objective of the lab is to facilitate familiarity with remotely monitoring PYNQ-Z2 and KV260 results using the Jupyter Notebook.
 
 #### Results
 
+1. [Multiplier_PYNQ](/lab/lab1/Multiplier_PYNQ/Readme.md)
+
+2. [FIR_AXI_Master_KV260](/lab/lab1/FIR_AXI_Master_KV260/Readme.md)
+
+3. [FIR_Stream_KV260](/lab/lab1/FIR_Stream_KV260/Readme.md)
+
 #### Insights and Reflections
 
-- Locate the register location of the design in PYNQ within the **hw.h** file, rather than the **.hwh** file.
+* Locate the register location of the design in PYNQ within the **hw.h** file, rather than the **.hwh** file.
+
+* Adding more virtual CPU cores to the virtual machine requires additional memory; otherwise, Vivado might crash during the process of generating a bitstream.
 
 ### Lab 02 KV260
 
 #### Descriptions
 
-- KV260
+The objective of the lab is to facilitate familiarity with the tool gtk-wave.
 
 #### Results
 
+1. [xsim_gcd](/lab/lab2/xsim_gcd/Readme.md)
+
 #### Insights and Reflections
+
+* Everything goes well in this lab.
 
 ### Lab 03 HLS vs. Verilog ( Combinational )
 
