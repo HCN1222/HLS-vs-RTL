@@ -28,7 +28,7 @@ The objective of the lab is to facilitate familiarity with remotely monitoring P
 
 * Adding more virtual CPU cores to the virtual machine requires additional memory; otherwise, Vivado might crash during the process of generating a bitstream.
 
-### Lab 02 KV260
+### Lab 02 GTK-Wave
 
 #### Descriptions
 
@@ -40,7 +40,7 @@ The objective of the lab is to facilitate familiarity with the tool gtk-wave.
 
 #### Insights and Reflections
 
-* Everything goes well in this lab.
+* Everything went well in this lab.
 
 ### Lab 03 HLS vs. Verilog ( Combinational )
 
@@ -96,6 +96,6 @@ The lab is to focus on implementing sequential logic in Verilog by utilizing the
 
 * In a general evaluation, the Verilog implementation consumes fewer resources compared to the one implemented using HLS. The HLS-based implementation, in contrast, tends to be less resource-efficient, often utilizing resources that are 3 to 4 times greater than those of the Verilog design.
 
-* The Verilog design will automatically insert a BUFG to the clock signal, whereas the HLS design will not. This could potentially account for the disparities observed in utilization and timing reports.
+* The Verilog design will automatically insert a BUFG to the clock signal, whereas the HLS design will not. **Please take note that the inclusion of a BUFG will not impact setup slack and hold slack, as it introduces delays in both the source data path and the destination data path.**
 
 * When implementing a design with a Finite State Machine (FSM), Vivado will automatically optimize the Verilog code into a one-hot design. However, the HLS Intellectual Property (IP) will not be transformed into a one-hot design. This could potentially lead to the scenario where the HLS design utilizes fewer flip-flops (FFs) than the Verilog design. It's worth noting that the one-hot design approach is more effective when dealing with FSMs.
