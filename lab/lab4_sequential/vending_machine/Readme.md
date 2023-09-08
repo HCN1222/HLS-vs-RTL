@@ -39,7 +39,7 @@ The waveform illustrates that both designs are indistinguishable and fulfill the
 |HLS|![Alt text](image-2.png)|
 |verilog|![Alt text](image-4.png)|
 
-There is a noticeable discrepancy between the HLS-designed and Verilog-designed implementations regarding flip-flop (FF) utilization. The HLS design utilizes only a third of the FFs compared to the FF usage in the Verilog design. Upon inspecting the schematic in Vivado, I determined that this variance stems from Vivado's optimization of the state machine through one-hot encoding in the Verilog design. While one-hot encoding leads to significant FF usage, it concurrently reduces logic delay and enhances the design's overall performance. **However, during the design implementation, an additional flip-flop was employed to reduce the complexity of the output port dime_out[1].** Consequently, there are 12 flip-flops instead of the originally expected 11.
+There is a noticeable discrepancy between the HLS-designed and Verilog-designed implementations regarding flip-flop (FF) utilization. The HLS design utilizes only a third of the FFs compared to the FF usage in the Verilog design. Upon inspecting the schematic in Vivado, I determined that this variance stems from Vivado's optimization of the state machine through one-hot encoding in the Verilog design. While one-hot encoding leads to significant FF usage, it concurrently reduces logic delay and enhances the design's overall performance. **However, during the design implementation, an additional flip-flop, "FSM_onehot_state_reg[7]_lopt_replica",  was employed to reduce the complexity of the output port "dime_out[1]".** Consequently, there are 12 flip-flops instead of the originally expected 11.
 
 |Timing||
 |--|--|
