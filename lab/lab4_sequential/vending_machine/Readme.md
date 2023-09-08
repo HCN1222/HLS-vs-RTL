@@ -25,9 +25,9 @@ The design is based on the FSM below:
 
 ## Result comparison
 
-The results indicate that the HLS design exhibits greater slack in both setup and hold times. Furthermore, it's worth noting that the HLS design employs significantly fewer flip-flops compared to the Verilog design, which is an unexpected outcome.**The reason is still unclear and requires clarification.**
+The results clearly demonstrate that the HLS design boasts larger slack in both setup and hold times. Additionally, it's important to highlight that the HLS design employs notably fewer flip-flops in comparison to the Verilog design, primarily due to the Verilog design's implementation in one-hot encoding. While the HLS design is more resource-efficient, the Verilog design offers greater stability.
 
-|waveform||
+|Waveform||
 |--------|--------|
 |HLS|![Alt text](image.png)|
 |verilog|![Alt text](image-3.png)|
@@ -39,11 +39,11 @@ The waveform illustrates that both designs are indistinguishable and fulfill the
 |HLS|![Alt text](image-2.png)|
 |verilog|![Alt text](image-4.png)|
 
-There is a noticeable discrepancy between the HLS-designed and Verilog-designed implementations regarding flip-flop (FF) utilization. The HLS design utilizes only a third of the FFs compared to the FF usage in the Verilog design. Upon inspecting the schematic in Vivado, I determined that this variance stems from Vivado's optimization of the state machine through one-hot encoding in the Verilog design. While one-hot encoding leads to significant FF usage, it concurrently reduces logic delay and enhances the design's overall performance. **However in my design, the slack isn't larger than the HLS design. The reason is still unclear and requires clarification.**
+There is a noticeable discrepancy between the HLS-designed and Verilog-designed implementations regarding flip-flop (FF) utilization. The HLS design utilizes only a third of the FFs compared to the FF usage in the Verilog design. Upon inspecting the schematic in Vivado, I determined that this variance stems from Vivado's optimization of the state machine through one-hot encoding in the Verilog design. While one-hot encoding leads to significant FF usage, it concurrently reduces logic delay and enhances the design's overall performance. **However, during the design implementation, an additional flip-flop was employed to reduce the complexity of the output port dime_out[1].** Consequently, there are 12 flip-flops instead of the originally expected 11.
 
 |Timing||
 |--|--|
 |HLS|![Alt text](image-1.png)|
 |verilog|![Alt text](image-5.png)|
 
-As shown above, the HLS design has larger slack in both setup time and hold time. **The reason is still unclear and requires clarification.**
+As illustrated above, the HLS design exhibits greater slack in both setup time and hold time. This divergence in timing may stem from the cascade of LUTs employed for state transition within the Verilog design.
