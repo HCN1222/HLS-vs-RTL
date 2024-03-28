@@ -1,8 +1,8 @@
-# Seminar_in_SOC
+# HLS-vs-RTL
 
 ## Overview
 
-This repository contains the materials for the Seminar in SOC project.
+This repository contains the experiments about the comparison between High-Level Synthesis (HLS) and Register Transfer Level (RTL) design methodologies. The experiments are conducted using Xilinx Vitis HLS and Vivado tools. The primary objective is to compare the resource utilization and timing reports of the designs implemented using the two methodologies.
 
 ## Contributors
 
@@ -15,7 +15,7 @@ This repository contains the materials for the Seminar in SOC project.
 
 * Applications: Xilinx Vitis 2022.1 (Vitis_hls / Vivado), GTKWave v3.3.103
 
-* FPGA boards: Xilinx PYNQ-Z2 / ZYSOC KV260 / BASYS3
+<!-- * FPGA boards: Xilinx PYNQ-Z2 / ZYSOC KV260 / BASYS3 -->
 
 ### Lab 01 PYNQ-Z2 & KV260
 
@@ -23,35 +23,7 @@ This repository contains the materials for the Seminar in SOC project.
 
 The objective of the lab is to facilitate familiarity with remotely monitoring PYNQ-Z2 and KV260 results using the Jupyter Notebook.
 
-#### Results
-
-1. [Multiplier_PYNQ](/lab/lab1/Multiplier_PYNQ/Readme.md)
-
-2. [FIR_AXI_Master_KV260](/lab/lab1/FIR_AXI_Master_KV260/Readme.md)
-
-3. [FIR_Stream_KV260](/lab/lab1/FIR_Stream_KV260/Readme.md)
-
-#### Insights and Reflections
-
-* Locate the register location of the design in PYNQ within the **hw.h** file, rather than the **.hwh** file.
-
-* Adding more virtual CPU cores to the virtual machine requires additional memory; otherwise, Vivado might crash during the process of generating a bitstream.
-
-### Lab 02 GTK-Wave
-
-#### Descriptions
-
-The objective of the lab is to facilitate familiarity with the tool gtk-wave.
-
-#### Results
-
-1. [xsim_gcd](/lab/lab2/xsim_gcd/Readme.md)
-
-#### Insights and Reflections
-
-* Everything went well in this lab.
-
-### Lab 03 HLS vs. Verilog ( Combinational )
+### Combinational
 
 #### Descriptions
 
@@ -59,15 +31,15 @@ The lab revolves around implementing combinational logic in Verilog based on the
 
 #### Results
 
-1. [parity_generator](/lab/lab3_combinational/parity_generator/Readme.md)
+1. [parity_generator](/combinational/parity_generator/Readme.md)
 
-2. [integer_division_modulus](/lab/lab3_combinational/integer_division_modulus/Readme.md)
+2. [integer_division_modulus](/combinational/integer_division_modulus/Readme.md)
 
-3. [leading_one](/lab/lab3_combinational/leading_one/Readme.md)
+3. [leading_one](/combinational/leading_one/Readme.md)
 
-4. [binary2bcd_div](/lab/lab3_combinational/binary2bcd_div/Readme.md)
+4. [binary2bcd_div](/combinational/binary2bcd_div/Readme.md)
 
-5. [binary2bcd_double_dabble](/lab/lab3_combinational/binary2bcd_double_dabble/Readme.md)
+5. [binary2bcd_double_dabble](/combinational/binary2bcd_double_dabble/Readme.md)
 
 #### Insights and Reflections
 
@@ -75,7 +47,7 @@ The lab revolves around implementing combinational logic in Verilog based on the
 
 * In vitis_HLS, sometimes the error message "top function not found in testbench" might rise from the over-length of the path of the project, which might be solved by shortening the path. Please take note that the name of the file will affect the path length a lot, since Vitis HLS will automatically generate a folder with the same name as the file name and also the .tcl under the file.
 
-### Lab 04 HLS vs. Verilog ( Sequential )
+### Sequential
 
 #### Descriptions
 
@@ -83,23 +55,23 @@ The lab is to focus on implementing sequential logic in Verilog by utilizing the
 
 #### Results
 
-1. [serial2parallel](/lab/lab4_sequential/serial2parallel/Readme.md)
+1. [serial2parallel](/sequential/serial2parallel/Readme.md)
 
-2. [parallel2serial](/lab/lab4_sequential/parallel2serial/Readme.md)
+2. [parallel2serial](/sequential/parallel2serial/Readme.md)
 
-3. [combinational_lock](/lab/lab4_sequential/combinational_lock/Readme.md)
+3. [combinational_lock](/sequential/combinational_lock/Readme.md)
 
-4. [vending_machine](/lab/lab4_sequential/vending_machine/Readme.md)
+4. [vending_machine](/sequential/vending_machine/Readme.md)
 
-5. [bcd_counter](/lab/lab4_sequential/bcd_counter/Readme.md)
+5. [bcd_counter](/sequential/bcd_counter/Readme.md)
 
-6. [single_cycle_regular_pulse](/lab/lab4_sequential/single_cycle_regular_pulse/Readme.md)
+6. [single_cycle_regular_pulse](/sequential/single_cycle_regular_pulse/Readme.md)
 
-7. [iir](/lab/lab4_sequential/iir/Readme.md)
+7. [iir](/sequential/iir/Readme.md)
 
-8. [uart_receiver](/lab/lab4_sequential/uart_receiver/Readme.md)
+8. [uart_receiver](/sequential/uart_receiver/Readme.md)
 
-9. [uart_transmitter](/lab/lab4_sequential/uart_transmitter/Readme.md)
+9. [uart_transmitter](/sequential/uart_transmitter/Readme.md)
 
 #### Insights and Reflections
 
